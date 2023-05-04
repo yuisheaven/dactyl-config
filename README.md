@@ -1,4 +1,4 @@
-# dactyl-config
+# dactyl-config QWERTZ German
 Keyboard configuration QWERTZ for Dactyl keyboard
 
 This is made to support a pretty much native German Layout experience.
