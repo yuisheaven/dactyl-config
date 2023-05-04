@@ -6,8 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 
 / {
     keymap {
@@ -22,11 +20,11 @@
             // |    2   |  2  | f   | 6    | 4    | 1    |                    | 2    | 1     | w     | s    | n     |  a    |
 
             bindings = <
-  &kp ESC    &kp N1  &kp N2     &kp N3     &kp N4    &kp N5    &kp N6   &kp N7     &kp N8   &kp N9    &kp N0  &kp EQUAL
-  &kp TAB     &kp Q   &kp W      &kp E      &kp R     &kp T     &kp Y    &kp U      &kp I    &kp O     &kp P  &kp MINUS
-&kp LSHFT     &kp A   &kp S      &kp D      &kp F     &kp G     &kp H    &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
-&kp GRAVE     &kp Z   &kp X      &kp C      &kp V     &kp B     &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH   &kp BSLH
-&kp LCTRL  &kp BSPC   &mo 1  &kp LSHFT  &kp SPACE  &kp LALT  &kp RALT  &kp RET   &kp RGUI    &mo 2   &kp DEL  &kp RCTRL
+  &kp ESC    &kp N1    &kp N2     &kp N3     &kp N4    &kp N5  &kp N6     &kp N7     &kp N8        &kp N9     &kp N0   &kp PLUS
+  &kp TAB     &kp Q     &kp W      &kp E      &kp R     &kp T   &kp Z      &kp U      &kp I         &kp O      &kp P  &kp LA(U)
+&kp LSHFT     &kp A     &kp S      &kp D      &kp F     &kp G   &kp H      &kp J      &kp K         &kp L  &kp LA(O)  &kp LA(A)
+   &kp LT     &kp Y     &kp X      &kp C      &kp V     &kp B   &kp N      &kp M  &kp COMMA       &kp DOT  &kp MINUS   &kp HASH
+&kp LCTRL  &kp BSPC  &kp RALT  &kp CARET  &kp SPACE  &kp LALT   &mo 0  &kp GRAVE    &kp RET  &kp LEFT_GUI  &kp QMARK      &mo 1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -41,30 +39,11 @@
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 
             bindings = <
-      &bt BT_CLR       &bt BT_SEL 0       &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans     &trans           &trans    &trans    &trans     &trans
-          &kp F1             &kp F2             &kp F3        &kp F4        &kp F5        &kp F6     &kp F7     &kp F8           &kp F9   &kp F10   &kp F11    &kp F12
-       &kp GRAVE           &kp EXCL             &kp AT      &kp HASH    &kp DOLLAR     &kp PRCNT  &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
-&ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG   &bootloader        &trans        &trans     &trans  &kp MINUS      &kp KP_PLUS  &kp LBRC  &kp RBRC   &kp PIPE
-          &trans             &trans             &trans        &trans        &trans        &trans     &trans     &trans           &trans    &trans    &trans     &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |		             |  +   |   -   |   =   |  [   |   ]   |   \   |
-            // |     |     |      |      |      |        |                   |       |      |       |       |      |       |
-
-            bindings = <
-    &none  &trans  &trans   &trans   &trans   &trans       &trans     &trans     &trans    &trans     &trans  &bootloader
-&kp GRAVE  &kp N1  &kp N2   &kp N3   &kp N4   &kp N5       &kp N6     &kp N7     &kp N8    &kp N9     &kp N0       &trans
-   &kp F1  &kp F2  &kp F3   &kp F4   &kp F5   &kp F6      &kp RET   &kp LEFT   &kp DOWN    &kp UP  &kp RIGHT       &trans
-   &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT     &kp BSLH
-   &trans  &trans  &trans   &trans   &trans   &trans       &trans     &trans     &trans    &trans     &trans       &trans
+       &kp ESC  &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp DOLLAR    &kp DOLLAR     &kp PERCENT  &kp AMPS  &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &kp EQUAL  &kp ASTERISK
+       &kp TAB            &kp Q              &kp W       &kp E         &kp R           &kp T     &kp Z      &kp U                 &kp I                  &kp O             &kp P     &kp LA(U)
+&kp LEFT_SHIFT            &kp A              &kp S       &kp D         &kp F           &kp G     &kp H      &kp J                 &kp K                  &kp L         &kp LA(O)     &kp LA(A)
+ &kp LESS_THAN            &kp Y              &kp X       &kp C         &kp V           &kp B     &kp N      &kp M             &kp COMMA             &kp PERIOD         &kp MINUS      &kp HASH
+&kp LEFT_ARROW           &trans    &kp RIGHT_ARROW      &trans  &kp UP_ARROW  &kp DOWN_ARROW     &mo 0  &kp GRAVE             &kp ENTER           &kp LEFT_GUI  &kp LA(QUESTION)         &mo 1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
