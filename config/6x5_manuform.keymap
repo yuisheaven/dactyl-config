@@ -51,11 +51,11 @@
 
         layer_2 {
             bindings = <
-&kp ESCAPE       &trans  &trans         &trans  &trans  &trans  &trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp BACKSLASH
-   &kp TAB  &kp AT_SIGN  &trans  &kp LC(LA(E))  &trans  &trans  &trans          &trans            &trans             &trans           &trans         &trans
-     &mo 1       &trans  &trans         &trans  &trans  &trans  &trans          &trans            &trans             &trans           &trans         &trans
-  &kp PIPE       &trans  &trans         &trans  &trans  &trans  &trans          &trans            &trans             &trans           &trans         &trans
-    &trans       &trans  &trans         &trans  &trans  &trans  &trans          &trans            &trans             &trans        &kp TILDE         &trans
+&kp ESCAPE         &trans  &trans         &trans  &trans  &trans          &trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp BACKSLASH
+   &kp TAB    &kp AT_SIGN  &trans  &kp LC(LA(E))  &trans  &trans          &trans          &trans            &trans             &trans           &trans         &trans
+     &mo 1         &trans  &trans         &trans  &trans  &trans          &trans          &trans            &trans             &trans           &trans         &trans
+  &kp PIPE         &trans  &trans         &trans  &trans  &trans          &trans          &trans            &trans             &trans           &trans         &trans
+    &trans  &kp BACKSPACE  &trans         &trans  &trans  &trans  &kp LEFT_SHIFT          &trans         &kp ENTER       &kp LEFT_GUI        &kp TILDE          &mo 2
             >;
         };
     };
