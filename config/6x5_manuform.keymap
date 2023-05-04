@@ -20,11 +20,11 @@
             // |    2   |  2  | f   | 6    | 4    | 1    |                    | 2    | 1     | w     | s    | n     |  a    |
 
             bindings = <
-  &kp ESC    &kp N1    &kp N2     &kp N3     &kp N4    &kp N5  &kp N6     &kp N7     &kp N8        &kp N9     &kp N0   &kp PLUS
-  &kp TAB     &kp Q     &kp W      &kp E      &kp R     &kp T   &kp Z      &kp U      &kp I         &kp O      &kp P  &kp LA(U)
-&kp LSHFT     &kp A     &kp S      &kp D      &kp F     &kp G   &kp H      &kp J      &kp K         &kp L  &kp LA(O)  &kp LA(A)
-   &kp LT     &kp Y     &kp X      &kp C      &kp V     &kp B   &kp N      &kp M  &kp COMMA       &kp DOT  &kp MINUS   &kp HASH
-&kp LCTRL  &kp BSPC  &kp RALT  &kp CARET  &kp SPACE  &kp LALT   &mo 0  &kp GRAVE    &kp RET  &kp LEFT_GUI  &kp QMARK      &mo 1
+  &kp ESC    &kp N1  &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8        &kp N9         &kp N0  &kp LC(LA(QUESTION))
+  &kp TAB     &kp Q   &kp W      &kp E      &kp R     &kp T           &kp Z      &kp U      &kp I         &kp O          &kp P         &kp LA(LC(U))
+    &mo 1     &kp A   &kp S      &kp D      &kp F     &kp G           &kp H      &kp J      &kp K         &kp L  &kp LA(LC(O))         &kp LA(LC(A))
+   &kp LT     &kp Y   &kp X      &kp C      &kp V     &kp B           &kp N      &kp M  &kp COMMA       &kp DOT      &kp MINUS              &kp HASH
+&kp LCTRL  &kp BSPC   &mo 2  &kp CARET  &kp SPACE  &kp LALT  &kp LEFT_SHIFT  &kp GRAVE    &kp RET  &kp LEFT_GUI       &kp PLUS         &kp RIGHT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -39,14 +39,24 @@
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 
             bindings = <
-       &kp ESC  &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp DOLLAR    &kp DOLLAR     &kp PERCENT  &kp AMPS  &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &kp EQUAL  &kp ASTERISK
-       &kp TAB            &kp Q              &kp W       &kp E         &kp R           &kp T     &kp Z      &kp U                 &kp I                  &kp O             &kp P     &kp LA(U)
-&kp LEFT_SHIFT            &kp A              &kp S       &kp D         &kp F           &kp G     &kp H      &kp J                 &kp K                  &kp L         &kp LA(O)     &kp LA(A)
- &kp LESS_THAN            &kp Y              &kp X       &kp C         &kp V           &kp B     &kp N      &kp M             &kp COMMA             &kp PERIOD         &kp MINUS      &kp HASH
-&kp LEFT_ARROW           &trans    &kp RIGHT_ARROW      &trans  &kp UP_ARROW  &kp DOWN_ARROW     &mo 0  &kp GRAVE             &kp ENTER           &kp LEFT_GUI  &kp LA(QUESTION)         &mo 1
+       &kp ESC  &kp EXCLAMATION  &kp DOUBLE_QUOTES         &kp DOLLAR    &kp DOLLAR     &kp PERCENT        &kp AMPS  &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp EQUAL       &kp QUESTION
+       &kp TAB        &kp LS(Q)          &kp LS(W)          &kp LS(E)     &kp LS(R)       &kp LS(T)       &kp LS(Z)  &kp LS(U)             &kp LS(I)              &kp LS(O)          &kp LS(P)  &kp LA(LS(LC(U)))
+         &mo 1        &kp LS(A)          &kp LS(S)          &kp LS(D)     &kp LS(F)       &kp LS(G)       &kp LS(H)  &kp LS(J)             &kp LS(K)              &kp LS(L)  &kp LA(LC(LS(O)))  &kp LA(LC(LS(A)))
+ &kp LESS_THAN        &kp LS(Y)          &kp LS(X)          &kp LS(C)     &kp LS(V)       &kp LS(B)       &kp LS(N)  &kp LS(M)         &kp SEMICOLON              &kp COLON     &kp UNDERSCORE            &kp SQT
+&kp LEFT_ARROW    &kp BACKSPACE    &kp RIGHT_ARROW  &kp LA(LC(CARET))  &kp UP_ARROW  &kp DOWN_ARROW  &kp LEFT_SHIFT  &kp GRAVE             &kp ENTER           &kp LEFT_GUI   &kp LA(QUESTION)              &mo 2
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        layer_2 {
+            bindings = <
+&kp ESCAPE       &trans  &trans         &trans  &trans  &trans  &trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp BACKSLASH
+   &kp TAB  &kp AT_SIGN  &trans  &kp LC(LA(E))  &trans  &trans  &trans          &trans            &trans             &trans           &trans         &trans
+     &mo 1       &trans  &trans         &trans  &trans  &trans  &trans          &trans            &trans             &trans           &trans         &trans
+  &kp PIPE       &trans  &trans         &trans  &trans  &trans  &trans          &trans            &trans             &trans           &trans         &trans
+    &trans       &trans  &trans         &trans  &trans  &trans  &trans          &trans            &trans             &trans        &kp TILDE         &trans
+            >;
         };
     };
 };
